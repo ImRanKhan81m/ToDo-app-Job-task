@@ -29,8 +29,16 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                 toast.success("Task successfully completed.")
             });
 
+            fetch(`http://localhost:5000/task/${data._id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setIsReload(!isReload);
+            });
+            
     };
-
 
     return (
         <div>
