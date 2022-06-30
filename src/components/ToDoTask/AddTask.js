@@ -47,6 +47,7 @@ const AddTask = () => {
                 setIsReload(!isReload);
             });
         document.getElementById("myForm").reset();
+        document.getElementById("btn").reset();
     };
 
     return (

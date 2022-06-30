@@ -13,7 +13,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                         <input type="radio" name="radio-1" class="radio" />
                     </div>
                     <div className=' flex'>
-                        <p className='mr-2'>{task?.title}</p>
+                        <p className='mr-2 font-bold'>{task?.title}-</p>
                         <p>{task?.textData}</p>
                     </div>
 
