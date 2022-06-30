@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import TaskList from './TaskList';
 import InputForm from './InputForm';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddTask = () => {
     const [tasks, setTasks] = useState([]);
@@ -23,6 +25,7 @@ const AddTask = () => {
             .then((data) => {
                 console.log(data);
                 setIsReload(!isReload);
+                toast.success("Task Delete Successfully.")
             });
     };
 
@@ -64,6 +67,7 @@ const AddTask = () => {
                             isReload={isReload}
                         />
                     ))}
+                    <ToastContainer />
                 </div>
             </div>
         </div>

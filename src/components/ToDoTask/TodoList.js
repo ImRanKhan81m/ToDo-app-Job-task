@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UpdateTask from "./UpdateTask"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TodoList = () => {
     const [tasks, setTasks] = useState([]);
@@ -23,6 +25,7 @@ const TodoList = () => {
             .then((data) => {
                 console.log(data);
                 setIsReload(!isReload);
+                toast.success("Task Delete Successfully.")
             });
     };
 
@@ -48,6 +51,7 @@ const TodoList = () => {
                             <UpdateTask setIsReload={setIsReload} isReload={isReload} id={task?._id} />
                         </div>
                     </div>
+                    <ToastContainer />
                 </div>
             ))}
 
