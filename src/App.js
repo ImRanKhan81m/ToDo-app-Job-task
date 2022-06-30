@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import TaskList from './components/ToDoTask/TaskList';
+import TodoList from './components/ToDoTask/TodoList';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/todo" element={<TaskList />} />
+        <Route path="/todo" element={<TodoList />} />
         <Route path="/completed" element={<CompletedTask />} />
         <Route path="/calender" element={<Calendar />} />
       </Routes>

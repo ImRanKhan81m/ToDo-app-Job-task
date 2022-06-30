@@ -5,6 +5,7 @@ import React from 'react';
 
 const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
 
+    console.log(task);
     return (
         <div>
             <div className='grid grid-cols-2 border p-5 shadow rounded-lg m-2'>
