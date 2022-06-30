@@ -50,18 +50,19 @@ const AddTask = () => {
     };
 
     return (
-        <div className="App">
-            <InputForm handlePost={handlePost} />
-            Length: {tasks?.length}
-            <div className="row row-cols-1 row-cols-md-3 g-4 m-2">
-                {tasks.map((task) => (
-                    <TaskList
-                        task={task}
-                        handleDelete={handleDelete}
-                        setIsReload={setIsReload}
-                        isReload={isReload}
-                    />
-                ))}
+        <div className='mid-content'>
+            <div className='lg:w-9/12 mx-auto '>
+                <InputForm handlePost={handlePost} />
+                <div>
+                    {tasks.map((task) => (
+                        <TaskList
+                            task={task}
+                            handleDelete={handleDelete}
+                            setIsReload={setIsReload}
+                            isReload={isReload}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
