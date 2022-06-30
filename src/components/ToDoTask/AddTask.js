@@ -9,7 +9,7 @@ const AddTask = () => {
     const [isReload, setIsReload] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/tasks")
+        fetch(" https://fathomless-lake-37978.herokuapp.com/tasks")
             .then((res) => res.json())
             .then((data) => setTasks(data));
     }, [isReload]);
@@ -18,7 +18,7 @@ const AddTask = () => {
     const handleDelete = (id) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(` https://fathomless-lake-37978.herokuapp.com/task/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -36,7 +36,7 @@ const AddTask = () => {
 
         console.log({ title, textData });
 
-        fetch("http://localhost:5000/task", {
+        fetch(" https://fathomless-lake-37978.herokuapp.com/task", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

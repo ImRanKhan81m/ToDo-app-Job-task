@@ -10,7 +10,7 @@ const TodoList = () => {
     const [isReload, setIsReload] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/tasks")
+        fetch(" https://fathomless-lake-37978.herokuapp.com/tasks")
             .then((res) => res.json())
             .then((data) => setTasks(data));
     }, [isReload]);
@@ -18,7 +18,7 @@ const TodoList = () => {
     const handleDelete = (id) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(` https://fathomless-lake-37978.herokuapp.com/task/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -36,7 +36,7 @@ const TodoList = () => {
 
         console.log({ title, textData });
 
-        fetch("http://localhost:5000/complete", {
+        fetch(" https://fathomless-lake-37978.herokuapp.com/complete", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -51,7 +51,7 @@ const TodoList = () => {
                 toast.success("Task successfully completed.")
             });
 
-        fetch(`http://localhost:5000/task/${data._id}`, {
+        fetch(` https://fathomless-lake-37978.herokuapp.com/task/${data._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -72,8 +72,8 @@ const TodoList = () => {
                             <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio" />
                         </div>
                         <div>
-                        <p className='mr-2'><span className='font-bold'>{task?.title}-</span> {task?.textData}</p>
-                    </div>
+                            <p className='mr-2'><span className='font-bold'>{task?.title}-</span> {task?.textData}</p>
+                        </div>
 
                     </div>
                     <div className='text-end'>

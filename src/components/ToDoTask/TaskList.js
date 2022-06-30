@@ -14,7 +14,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
 
         console.log({ title, textData });
 
-        fetch("http://localhost:5000/complete", {
+        fetch(" https://fathomless-lake-37978.herokuapp.com/complete", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -29,7 +29,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                 toast.success("Task successfully completed.")
             });
 
-        fetch(`http://localhost:5000/task/${data._id}`, {
+        fetch(` https://fathomless-lake-37978.herokuapp.com/task/${data._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

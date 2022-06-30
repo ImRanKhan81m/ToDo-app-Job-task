@@ -43,7 +43,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
     const textData = event.target.textData.value;
 
     // console.log(title, textData);
-    fetch(`http://localhost:5000/task/${id}`, {
+    fetch(` https://fathomless-lake-37978.herokuapp.com/task/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
