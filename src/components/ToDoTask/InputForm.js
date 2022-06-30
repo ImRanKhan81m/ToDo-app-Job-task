@@ -4,14 +4,12 @@ import { useForm } from "react-hook-form";
 const InputForm = ({handlePost}) => { 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-
-
     return (
         <div className='flex justify-center items-center px-5 pt-5'>
             <div className="mid-content card flex-shrink-0 w-full lg:max-w-lg md:max-w-lg sm:max-w-lg max-w-sm shadow-2xl bg-base-100 ">
                 <div className="card-body">
                     <h1 className='text-3xl text-center font-bold'>What's the Plan for Today?</h1>
-                    <form onSubmit={handleSubmit(handlePost)}>
+                    <form onSubmit={handleSubmit(handlePost)} id="myForm">
 
                         <div className="form-control ">
                             <label className="label">
