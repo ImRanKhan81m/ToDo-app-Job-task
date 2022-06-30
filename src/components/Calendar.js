@@ -11,7 +11,7 @@ const Calendar = () => {
             <div className='flex justify-center mt-10'>
                 <div>
                     <Calendars className="w-full p-5" onChange={onChange} value={value} />
-                    <h4 className='text-xl text-center mt-10 lg:mb-28' >Selected Date: {format(value, 'PP')}</h4>
+                    <h4 className='text-xl text-center mt-10 lg:mb-10' >Selected Date: {format(value, 'PP')}</h4>
                 </div>
             </div>
         </div>

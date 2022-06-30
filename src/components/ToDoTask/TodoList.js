@@ -64,17 +64,16 @@ const TodoList = () => {
 
     return (
         <div className='mid-content'>
-            <h1 className='font-bold text-5xl text-center py-5'>My To-Do List</h1>
+            <h1 className='font-bold text-4xl text-center py-5'>My To-Do List</h1>
             {tasks.map((task) => (
                 <div className='grid grid-cols-2 border p-5 shadow rounded-lg m-2'>
                     <div className='flex w-full'>
                         <div className='mr-3'>
                             <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio" />
                         </div>
-                        <div className=' flex'>
-                            <p className='mr-2 font-bold'>{task?.title}-</p>
-                            <p>{task?.textData}</p>
-                        </div>
+                        <div>
+                        <p className='mr-2'><span className='font-bold'>{task?.title}-</span> {task?.textData}</p>
+                    </div>
 
                     </div>
                     <div className='text-end'>

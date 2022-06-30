@@ -29,7 +29,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                 toast.success("Task successfully completed.")
             });
 
-            fetch(`http://localhost:5000/task/${data._id}`, {
+        fetch(`http://localhost:5000/task/${data._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -37,7 +37,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                 console.log(data);
                 setIsReload(!isReload);
             });
-            
+
     };
 
     return (
@@ -47,9 +47,8 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                     <div className='mr-3'>
                         <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio" />
                     </div>
-                    <div className=' flex'>
-                        <p className='mr-2 font-bold'>{task?.title}-</p>
-                        <p>{task?.textData}</p>
+                    <div>
+                        <p className='mr-2'><span className='font-bold'>{task?.title}-</span> {task?.textData}</p>
                     </div>
 
                 </div>
