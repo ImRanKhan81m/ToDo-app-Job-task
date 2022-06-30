@@ -25,7 +25,7 @@ const AddTask = () => {
             .then((data) => {
                 console.log(data);
                 setIsReload(!isReload);
-                toast.success("Task Delete Successfully.")
+                toast.error("This task has been deleted!")
             });
     };
 

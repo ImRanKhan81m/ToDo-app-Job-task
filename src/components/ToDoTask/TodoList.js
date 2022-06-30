@@ -25,8 +25,41 @@ const TodoList = () => {
             .then((data) => {
                 console.log(data);
                 setIsReload(!isReload);
-                toast.success("Task Delete Successfully.")
+                toast.error("This task has been deleted!")
             });
+    };
+
+
+    const handleComplete = data => {
+        const title = data.title;
+        const textData = data.textData;
+
+        console.log({ title, textData });
+
+        fetch("http://localhost:5000/complete", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+
+            body: JSON.stringify({ title, textData }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setIsReload(!isReload);
+                toast.success("Task successfully completed.")
+            });
+
+        fetch(`http://localhost:5000/task/${data._id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setIsReload(!isReload);
+            });
+
     };
 
     return (
@@ -36,7 +69,7 @@ const TodoList = () => {
                 <div className='grid grid-cols-2 border p-5 shadow rounded-lg m-2'>
                     <div className='flex w-full'>
                         <div className='mr-3'>
-                            <input type="radio" name="radio-1" className="radio" />
+                            <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio" />
                         </div>
                         <div className=' flex'>
                             <p className='mr-2 font-bold'>{task?.title}-</p>
