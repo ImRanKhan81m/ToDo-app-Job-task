@@ -1,15 +1,22 @@
-import logo from './logo.svg';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Calendar from './components/Calendar';
+import CompletedTask from './components/CompletedTask';
+import Home from './components/Home';
+import Task from './components/ToDoTask/Task';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
-      <button class="btn">Button</button>
-      <button class="btn btn-primary">Button</button>
-      <button class="btn btn-secondary">Button</button>
-      <button class="btn btn-accent">Button</button>
-      <button class="btn btn-ghost">Button</button>
-      <button class="btn btn-link">Button</button>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/todo" element={<Task />} />
+        <Route path="/completed" element={<CompletedTask />} />
+        <Route path="/calender" element={<Calendar />} />
+      </Routes>
     </div>
   );
 }
