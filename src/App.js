@@ -6,7 +6,6 @@ import CompletedTask from './components/CompletedTask';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import TaskList from './components/ToDoTask/TaskList';
 import TodoList from './components/ToDoTask/TodoList';
 
 function App() {
