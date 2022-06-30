@@ -11,6 +11,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    padding: "30px",
+    backgroundColor: "#f3f4f6",
   },
 };
 
@@ -62,13 +64,12 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
-      >
+        contentLabel="Example Modal">
         <button onClick={closeModal} className="btn btn-sm btn-warning">
           close
         </button>
         <div>Please update your Task!</div>
-        <div className=" p-3 color-4D4C7D">
+        <div className=" mt-3 bg-secondary">
           <form className="container " onSubmit={handleUpdate}>
             <div className="input-group mb-3 mt-5 ">
               <input
@@ -91,7 +92,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
               ></input>
             </div>
             <div className="mt-4">
-              <input type="submit" value="submit" className="btn btn-info" />
+              <input type="submit" value="submit" className="btn btn-primary" />
             </div>
           </form>
         </div>

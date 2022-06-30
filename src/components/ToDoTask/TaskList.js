@@ -13,8 +13,8 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                         <input type="radio" name="radio-1" class="radio" />
                     </div>
                     <div className=' flex'>
-                        <p className='mr-2'>{task.title}</p>
-                        <p>{task.textData}</p>
+                        <p className='mr-2'>{task?.title}</p>
+                        <p>{task?.textData}</p>
                     </div>
 
                 </div>
@@ -22,7 +22,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                     <div className='flex justify-end'>
                         <button onClick={() => handleDelete(task._id)}><FontAwesomeIcon className='text-right mr-3 text-xl' icon={faTrash}></FontAwesomeIcon></button>
                         {/* <button><FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon></button> */}
-                        <UpdateTask setIsReload={setIsReload} isReload={isReload} id={task._id} />
+                        <UpdateTask setIsReload={setIsReload} isReload={isReload} id={task?._id} />
                     </div>
                 </div>
             </div>
