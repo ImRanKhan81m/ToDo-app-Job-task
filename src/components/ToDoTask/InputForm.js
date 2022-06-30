@@ -20,7 +20,7 @@ const InputForm = ({handlePost}) => {
                             <input
                                 type="text"
                                 name='userName'
-                                placeholder="Add a Title"
+                                placeholder="Add a Tit"
                                 className="input input-bordered focus:outline-none"
                                 {...register("title", {
                                     required: {

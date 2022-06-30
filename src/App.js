@@ -4,8 +4,8 @@ import './App.css';
 import Calendar from './components/Calendar';
 import CompletedTask from './components/CompletedTask';
 import Home from './components/Home';
-import Task from './components/ToDoTask/Task';
 import Navbar from './components/Navbar';
+import AddTask from './components/ToDoTask/AddTask';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/todo" element={<Task />} />
+        <Route path="/todo" element={<AddTask />} />
         <Route path="/completed" element={<CompletedTask />} />
         <Route path="/calender" element={<Calendar />} />
       </Routes>
