@@ -1,4 +1,4 @@
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UpdateTask from "./UpdateTask"
 import React from 'react';
@@ -19,9 +19,11 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
 
                 </div>
                 <div className='text-end'>
-                    <button onClick={() => handleDelete(task._id)}><FontAwesomeIcon className='text-right mr-3 text-xl' icon={faTrash}></FontAwesomeIcon></button>
-                    {/* <button><FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon></button> */}
-                    <UpdateTask setIsReload={setIsReload} isReload={isReload} id={task._id}/>
+                    <div className='flex justify-end'>
+                        <button onClick={() => handleDelete(task._id)}><FontAwesomeIcon className='text-right mr-3 text-xl' icon={faTrash}></FontAwesomeIcon></button>
+                        {/* <button><FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon></button> */}
+                        <UpdateTask setIsReload={setIsReload} isReload={isReload} id={task._id} />
+                    </div>
                 </div>
             </div>
         </div>

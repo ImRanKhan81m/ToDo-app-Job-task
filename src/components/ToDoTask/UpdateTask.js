@@ -1,5 +1,6 @@
 import React from "react";
-
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from "react-modal";
 
 const customStyles = {
@@ -13,11 +14,8 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-
-//don't worry its just a package for modal. just go and explore https://www.npmjs.com/package/react-modal
 
 export default function UpdateModal({ id, setIsReload, isReload }) {
   let subtitle;
@@ -37,29 +35,27 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
   }
 
 
-const handleUpdate = (event) => {
-  event.preventDefault();
-  console.log("hello");
-  const userName = event.target.userName.value;
-  const textData = event.target.textData.value;
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const title = event.target.title.value;
+    const textData = event.target.textData.value;
 
-  // console.log(userName, textData);
-  fetch(`http://localhost:4000/note/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userName, textData }),
-  })
-    .then((res) => res.json())
-    .then((data) => setIsReload(!isReload));
-};
+    console.log(title, textData);
+    fetch(`http://localhost:5000/task/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, textData }),
+    })
+      .then((res) => res.json())
+      .then((data) => setIsReload(!isReload));
+  };
 
   return (
     <div>
-      <button onClick={openModal} className="color-801336 btn-sm btn">
-        {" "}
-        Update
+      <button onClick={openModal}>
+        <FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon>
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -71,25 +67,28 @@ const handleUpdate = (event) => {
         <button onClick={closeModal} className="btn btn-sm btn-warning">
           close
         </button>
-        <div>Please insert your text</div>
+        <div>Please update your Task!</div>
         <div className=" p-3 color-4D4C7D">
           <form className="container " onSubmit={handleUpdate}>
-            <div className="input-group mb-3 mt-5">
+            <div className="input-group mb-3 mt-5 ">
               <input
                 type="text"
-                className="form-control"
-                placeholder="Your name"
-                aria-label="Username"
-                name="userName"
-              />
+                className="form-control border p-3 rounded-xl"
+                required
+                placeholder="Add a Task"
+                aria-label="With input"
+                name="title">
+              </input>
             </div>
 
-            <div className="input-group">
-              <textarea
-                className="form-control"
+            <div className="input-group ">
+              <input
+                className="form-control border p-3 rounded-xl"
                 aria-label="With textarea"
+                placeholder="Update your plan.."
                 name="textData"
-              ></textarea>
+                required
+              ></input>
             </div>
             <div className="mt-4">
               <input type="submit" value="submit" className="btn btn-info" />
