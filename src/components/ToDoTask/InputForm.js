@@ -52,7 +52,7 @@ const InputForm = ({handlePost}) => {
                                 {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
                             </label>
                         </div>
-                        <input id='btn' className='btn w-32 btn-primary' type="submit" value="Add Task" />
+                        <button className='btn btn-primary w-32'>Add Task</button>
                     </form>
                 </div>
             </div>

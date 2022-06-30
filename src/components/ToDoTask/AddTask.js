@@ -45,9 +45,9 @@ const AddTask = () => {
             .then((data) => {
                 console.log(data);
                 setIsReload(!isReload);
+                document.getElementById("myForm").reset();
             });
-        document.getElementById("myForm").reset();
-        document.getElementById("btn").reset();
+
     };
 
     return (
@@ -57,6 +57,7 @@ const AddTask = () => {
                 <div>
                     {tasks.map((task) => (
                         <TaskList
+                            key={task._id}
                             task={task}
                             handleDelete={handleDelete}
                             setIsReload={setIsReload}
